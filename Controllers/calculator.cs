@@ -10,18 +10,18 @@ namespace MyApp.Namespace
     public class Calculator : ControllerBase
     {
     [HttpGet]
-public IActionResult calculator(int numberOne, int numberTwo, calcAction calcOperation)
+public IActionResult calculator(int? numberOne, int? numberTwo, calcAction calcOperation)
 {
     switch (calcOperation)
     {
         case calcAction.Add:
-            return Ok(numberOne + numberTwo);
+            return Ok(Convert.ToInt16(numberOne) + Convert.ToInt16(numberTwo));
 
         case calcAction.Subtract:
-            return Ok(numberOne - numberTwo);
+            return Ok(Convert.ToInt16(numberOne) - Convert.ToInt16(numberTwo));
 
         case calcAction.Multiply:
-            return Ok(numberOne * numberTwo);
+            return Ok(Convert.ToInt16(numberOne) * Convert.ToInt16(numberTwo));
 
         case calcAction.Divide:
             if (numberTwo == 0)
