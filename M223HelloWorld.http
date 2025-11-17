@@ -1,0 +1,6 @@
+@M223HelloWorld_HostAddress = http://localhost:5129
+
+GET {{M223HelloWorld_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
